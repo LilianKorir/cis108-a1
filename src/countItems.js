@@ -12,11 +12,25 @@
  *  string in the input array
  */
 function countItems(array) {
+  let count = {};
+  array.forEach(function (element) {
+    if (!count[element]) { // appears once
+      count[element] = 1;
+    } else { //appears more than once
+      count[element] += 1;
+
+    }
+
+  });
+  return count;
   // This is your job. :)
 }
 
 if (require.main === module) {
   console.log('Running sanity checks for countItems:');
+  console.log(countItems(['bonus', 'apple', 'bonus', 'bonus', 'goat', 'apple', 'potato']));
+  console.log(countItems(['my', 'name', 'is', 'my', 'dear', 'name', 'yes', 'that', 'is', 'it']));
+  console.log(countItems(['today', 'is', 'a', 'very', 'good', 'today', 'sunny', 'windy', 'windy']));
 
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
