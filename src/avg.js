@@ -1,5 +1,5 @@
 let sum = require('./sum');
-
+console.log(sum([78, 2, 0]));
 /**
  * Returns the average of the numbers in the input array.
  *
@@ -10,6 +10,7 @@ let sum = require('./sum');
  * @returns {number} The average
  */
 function avg(array) {
+  return sum(array) / array.length;
   // This is your job. :)
   // Use the sum function you wrote rather than re-implementing
   // it in this file. We required it above.
@@ -17,6 +18,11 @@ function avg(array) {
 
 if (require.main === module) {
   console.log('Running sanity checks for avg:');
+  console.log(avg([2, 4, 6, 8])); //5
+  console.log(avg([2, 4, 6])); // 4
+  console.log(avg([20, 100, 700, 890])); // 427.5
+  console.log(avg([-90, 40, 65, 867])); // 220.5
+
 
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
