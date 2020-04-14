@@ -13,15 +13,17 @@
  */
 function countItems(array) {
   let count = {};
-  array.forEach(function (element) {
-    if (!count[element]) { // appears once
-      count[element] = 1;
-    } else { //appears more than once
-      count[element] += 1;
+  for(element of array){
+  let item = element.toUpperCase(); // making it case insensitive
 
+    if (count.hasOwnProperty(item)){
+      count[item] +=1;
     }
+    else{
+      count[item] = 1; // appears once
+    }
+  }
 
-  });
   return count;
   // This is your job. :)
 }
@@ -31,7 +33,7 @@ if (require.main === module) {
   console.log(countItems(['bonus', 'apple', 'bonus', 'bonus', 'goat', 'apple', 'potato']));
   console.log(countItems(['my', 'name', 'is', 'my', 'dear', 'name', 'yes', 'that', 'is', 'it']));
   console.log(countItems(['today', 'is', 'a', 'very', 'good', 'today', 'sunny', 'windy', 'windy']));
-
+console.log(countItems(['toString', 'toString', 'Apple', 'apple', 'potato']));
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
 }

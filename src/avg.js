@@ -1,5 +1,4 @@
 let sum = require('./sum');
-console.log(sum([78, 2, 0]));
 /**
  * Returns the average of the numbers in the input array.
  *
